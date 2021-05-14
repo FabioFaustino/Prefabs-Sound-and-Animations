@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{1A5DB131-D779-C8DB-7B38-2830FCB8F480}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="33" Column="15" />
-      <File FileName="Assets/Scripts/GunController.cs" Line="30" Column="9" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="43" Column="13" />
+      <File FileName="Assets/Scripts/GunController.cs" Line="38" Column="9" />
       <File FileName="Assets/Scripts/Health.cs" />
     </Files>
     <Pads>
@@ -10,9 +10,8 @@
         <State name="__root__">
           <Node name="Prefabs Sound and Animations" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="PlayerController.cs" selected="True" />
-              </Node>
+              <Node name="Scripts" expanded="True" />
+              <Node name="Simple city plain" selected="True" />
             </Node>
           </Node>
         </State>

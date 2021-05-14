@@ -7,7 +7,10 @@ public class PlayerController : MonoBehaviour
     private CharacterController characterController;
     private Animator animator;
 
-    public float moveSpeed = 400;
+    public float forwardMoveSpeed = 7.5f;
+
+
+    public float backMoveSpeed = 3f;
     public float turnSpeed = 5;
 
     private void Awake()
@@ -35,6 +38,8 @@ public class PlayerController : MonoBehaviour
 
         if(vertical != 0)
         {
+            float moveSpeed = vertical > 0 ? forwardMoveSpeed : backMoveSpeed;
+
             characterController.SimpleMove(transform.forward * moveSpeed * vertical);
         }
     }

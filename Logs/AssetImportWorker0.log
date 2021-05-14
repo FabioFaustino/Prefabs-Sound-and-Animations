@@ -1972,3 +1972,24 @@ Received Import Request.
 Start importing Assets/Animation/walk backward.fbx using Guid(c1f2325de3f8d46b0bcf4777645d85f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e7e1d0518848d687d52fc56349f98d1') in 0.004091 seconds
   Import took 0.006213 seconds .
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000365 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.822 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.22 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1263 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 165.1 MB.
+System memory in use after: 165.1 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1836.
+Total: 1.289083 ms (FindLiveObjects: 0.172417 ms CreateObjectMapping: 0.027000 ms MarkObjects: 1.013334 ms  DeleteObjects: 0.074875 ms)
+
