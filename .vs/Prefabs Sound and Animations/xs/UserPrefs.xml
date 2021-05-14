@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{1A5DB131-D779-C8DB-7B38-2830FCB8F480}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GunController.cs">
+    <Files>
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="11" Column="30" />
+      <File FileName="Assets/Scripts/PlayerController2.cs" />
+      <File FileName="Assets/Scripts/GunController.cs" Line="30" Column="9" />
+      <File FileName="Assets/Scripts/Health.cs" Line="25" Column="5" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Prefabs Sound and Animations" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="GunController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="50b97e72-5234-4227-a71a-9c30145ffdf5" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
