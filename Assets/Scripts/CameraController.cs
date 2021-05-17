@@ -1,21 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+using Cinemachine;
+
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject player;
-    private Vector3 offset;
+    
+    [SerializeField]
+    private float sensivity = 0.5f;
+
+    private CinemachineComposer composer;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        offset = transform.position - player.transform.position;
+        composer = GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineComposer>();
+
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
-        transform.position = player.transform.position + offset;
+        float vertical = Input.GetAxis("Mouse Y") * sensivity;
+        composer.m_TrackedObjectOffset.y += vertical;
+        composer.m_TrackedObjectOffset.y = Mathf.Clamp(composer.m_TrackedObjectOffset.y, 0, 10);
     }
 }

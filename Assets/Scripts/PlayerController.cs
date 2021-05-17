@@ -11,12 +11,14 @@ public class PlayerController : MonoBehaviour
 
 
     public float backMoveSpeed = 3f;
-    public float turnSpeed = 5;
+    public float turnSpeed = 15;
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
     // Start is called before the first frame update
     void Start()
@@ -27,7 +29,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var horizontal = Input.GetAxis("Horizontal");
+        var horizontal = Input.GetAxis("Mouse X");
         var vertical = Input.GetAxis("Vertical");
         var movement = new Vector3(horizontal, 0, vertical);
 
