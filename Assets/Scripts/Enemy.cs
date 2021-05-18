@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IPooledObject
 {
     [SerializeField]
     private float attackRefreshrate = 1.5f;
@@ -52,5 +52,10 @@ public class Enemy : MonoBehaviour
     {
         attackTimer = 0;
         healthTarget.TakeDamage(1);
+    }
+
+    public void OnObjectSpawn()
+    {
+        Debug.Log("Spawned");
     }
 }
