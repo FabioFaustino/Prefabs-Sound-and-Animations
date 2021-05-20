@@ -2,6 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/**
+ * Saltar
+ * apanhar merdas do chao
+ * Backpack ????????
+ * Agachar
+ */
+
+
 public class PlayerController : MonoBehaviour
 {
     private CharacterController characterController;
@@ -25,6 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         
     }
+
 
     // Update is called once per frame
     void Update()

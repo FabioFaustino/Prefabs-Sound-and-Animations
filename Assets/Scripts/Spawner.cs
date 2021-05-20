@@ -14,6 +14,8 @@ public class Spawner : MonoBehaviour
     private int simultaneousSpawnObjects = 1;
     [SerializeField]
     private int secondsToIncreaseSpawns = 20;
+    [SerializeField]
+    private string pooledObjectTag = "Enemy";
 
     private int currentSpawnedObjects = 0;
 
@@ -22,6 +24,10 @@ public class Spawner : MonoBehaviour
     private float currentTimeSinceLastSpawn = 0.0f;
 
     private float currentTime = 0.0f;
+
+    [SerializeField]
+    private Quaternion rotation = Quaternion.identity;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +64,7 @@ public class Spawner : MonoBehaviour
         for(int i = 0; i < simultaneousSpawnObjects; i++)
         {
             Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), 1, Random.Range(-spawnValues.z, spawnValues.z));
-            objectPooler.SpawnFromPool("Enemy", spawnPosition, Quaternion.identity);
+            objectPooler.SpawnFromPool(pooledObjectTag, spawnPosition, rotation);
         }        
     }
 
