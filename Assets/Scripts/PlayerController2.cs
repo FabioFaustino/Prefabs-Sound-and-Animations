@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController2 : MonoBehaviour
@@ -16,7 +14,7 @@ public class PlayerController2 : MonoBehaviour
     private bool jumpQueued = false;
     public float jumpHeight = 5.0f;
     private Vector3 startPostion;
-    private int pointsToWin;    
+    private int pointsToWin;
     private GameObject[] capsules;
     private GameObject[] cubes;
 
@@ -28,7 +26,7 @@ public class PlayerController2 : MonoBehaviour
         InitializeText();
         startPostion = rb.position;
         //GetSceneObjects();
-       // pointsToWin = capsules.Length * 2 + cubes.Length;
+        // pointsToWin = capsules.Length * 2 + cubes.Length;
 
 
     }
@@ -37,9 +35,9 @@ public class PlayerController2 : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-     
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f , moveVertical);
+
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         rb.AddForce(movement * speed);
 
         if (jumpQueued)
@@ -47,22 +45,22 @@ public class PlayerController2 : MonoBehaviour
             rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
             isOnGround = false;
             jumpQueued = false;
-        }     
+        }
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Jump") && isOnGround) 
+        if (Input.GetButtonDown("Jump") && isOnGround)
             jumpQueued = true;
         if (rb.position.y < -5)
-            gameOverText.text = "Game Over";   
-        if(rb.position.y < -20)
+            gameOverText.text = "Game Over";
+        if (rb.position.y < -20)
         {
             Reset();
             gameOverText.text = "";
         }
-        
-        
+
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -76,10 +74,10 @@ public class PlayerController2 : MonoBehaviour
         if (other.gameObject.CompareTag("Pick Up Capsule"))
         {
             other.gameObject.SetActive(false);
-            score+= 2;
+            score += 2;
             SetCountText();
         }
-        if (other.gameObject.CompareTag("FinishLine") )
+        if (other.gameObject.CompareTag("FinishLine"))
         {
             if (score >= pointsToWin)
             {
@@ -92,19 +90,20 @@ public class PlayerController2 : MonoBehaviour
                 winText.text = "You need " + (pointsToWin - score) + " more points.";
             }
         }
-        
+
     }
 
 
-    private void OnTriggerExit(Collider other) { 
-    if (other.gameObject.CompareTag("FinishLine"))                 
-         winText.text = "";            
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("FinishLine"))
+            winText.text = "";
     }
 
-  
-        
 
-     void OnCollisionEnter(Collision other)
+
+
+    void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
@@ -114,9 +113,9 @@ public class PlayerController2 : MonoBehaviour
         }
     }
 
-     void OnCollisionExit(Collision other)
+    void OnCollisionExit(Collision other)
     {
-      
+
     }
     void InitializeText()
     {
@@ -126,7 +125,7 @@ public class PlayerController2 : MonoBehaviour
     }
     void SetCountText()
     {
-        scoreText.text = "Score: " + score.ToString();        
+        scoreText.text = "Score: " + score.ToString();
     }
     private void Reset()
     {
@@ -161,12 +160,12 @@ public class PlayerController2 : MonoBehaviour
     {
         foreach (var capsule in capsules)
         {
-         //   Debug.Log(capsule.name );
+            //   Debug.Log(capsule.name );
             capsule.SetActive(true);
         }
         foreach (var cube in cubes)
             cube.SetActive(true);
     }
 
-  
+
 }

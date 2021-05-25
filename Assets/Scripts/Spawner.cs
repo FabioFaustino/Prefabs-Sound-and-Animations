@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -37,7 +35,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         currentTimeSinceLastSpawn += Time.deltaTime;
         currentTime += Time.deltaTime;
 
@@ -60,12 +58,12 @@ public class Spawner : MonoBehaviour
     }
 
     private void Spawn()
-    {       
-        for(int i = 0; i < simultaneousSpawnObjects; i++)
+    {
+        for (int i = 0; i < simultaneousSpawnObjects; i++)
         {
             Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), 1, Random.Range(-spawnValues.z, spawnValues.z));
             objectPooler.SpawnFromPool(pooledObjectTag, spawnPosition, rotation);
-        }        
+        }
     }
 
     private void IncreaseSpawns()

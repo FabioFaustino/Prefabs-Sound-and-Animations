@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GunController : MonoBehaviour
@@ -24,28 +21,36 @@ public class GunController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     void FireGun()
     {
         AnimateShot();
 
-        Ray ray =  Camera.main.ViewportPointToRay(Vector3.one * 0.5f);
+        Ray ray = Camera.main.ViewportPointToRay(Vector3.one * 0.5f);
 
         Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 2f);
 
         RaycastHit hitInfo;
 
-        if(Physics.Raycast(ray,out hitInfo, 100))
+        if (Physics.Raycast(ray, out hitInfo, 100))
         {
             var health = hitInfo.collider.GetComponent<Health>();
-            if(health != null)
+            if (health != null)
             {
                 health.TakeDamage(damage);
+                if (health.GetComponentInParent<Enemy>() != null)
+                {
+                    if (health.isDead)
+                    {
+                        GetComponentInParent<PlayerController>().increasePoints(10);
+                        GetComponentInParent<PlayerController>().ControlTime(2);
+                    }
+                }
             }
         }
-        
+
     }
     // Update is called once per frame
     void Update()

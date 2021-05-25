@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -22,12 +20,12 @@ public class EnemyMovement : MonoBehaviour
     private void AggroDetection_OnAggro(Transform target)
     {
         this.target = target;
-        
+
     }
 
     private void Update()
     {
-        if(target != null)
+        if (target != null)
         {
             navMeshAgent.SetDestination(target.position);
 

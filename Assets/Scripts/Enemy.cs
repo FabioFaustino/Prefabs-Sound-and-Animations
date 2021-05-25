@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IPooledObject
@@ -12,7 +9,13 @@ public class Enemy : MonoBehaviour, IPooledObject
     private AggroDetection aggroDetection;
     private Health healthTarget;
 
-    
+    [SerializeField]
+    private ParticleSystem muzzleParticle;
+
+    [SerializeField]
+    private AudioSource gunFireAudio;
+
+
 
     private void Awake()
     {
@@ -23,7 +26,7 @@ public class Enemy : MonoBehaviour, IPooledObject
     private void AggroDetection_OnAggro(Transform target)
     {
         Health health = target.GetComponent<Health>();
-        if(health != null)
+        if (health != null)
         {
             healthTarget = health;
         }
@@ -33,23 +36,25 @@ public class Enemy : MonoBehaviour, IPooledObject
     // Update is called once per frame
     void Update()
     {
-        if(healthTarget != null)
+        if (healthTarget != null)
         {
             attackTimer += Time.deltaTime;
             if (CanAttack())
             {
                 Attack();
             }
-        } 
+        }
     }
 
     private bool CanAttack()
     {
-        return attackTimer >= attackRefreshrate;
+
+        return attackTimer >= attackRefreshrate && !healthTarget.isDead;
     }
 
     private void Attack()
     {
+        AnimateShot();
         attackTimer = 0;
         healthTarget.TakeDamage(1);
     }
@@ -58,4 +63,11 @@ public class Enemy : MonoBehaviour, IPooledObject
     {
         Debug.Log("Spawned");
     }
+
+    void AnimateShot()
+    {
+        muzzleParticle.Play();
+        gunFireAudio.Play();
+    }
+
 }

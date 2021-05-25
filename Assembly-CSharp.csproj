@@ -58,19 +58,23 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\ObjectPooler.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\GenericObjectPool.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\scri.cs" />
     <Compile Include="Assets\Scripts\GunController.cs" />
+    <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Rotator.cs" />
     <Compile Include="Assets\scr.cs" />
+    <Compile Include="Assets\Scripts\IPooledObject.cs" />
     <Compile Include="Assets\Scripts\AggroDetection.cs" />
     <Compile Include="Assets\Scripts\PlayerController2.cs" />
-    <Compile Include="Assets\Scripts\Spawner.cs" />
-    <Compile Include="Assets\Scripts\ObjectPooler.cs" />
-    <Compile Include="Assets\Scripts\IPooledObject.cs" />
-    <Compile Include="Assets\Scripts\GenericObjectPool.cs" />
+    <Compile Include="Assets\ProgressBar\Script\ProgressBarCircle.cs" />
+    <Compile Include="Assets\ProgressBar\Script\ProgressBar.cs" />
+    <Compile Include="Assets\ProgressBar\Scene\Demo.cs" />
+    <Compile Include="Assets\Scripts\GameOverScript.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\ToonSoldiers_demo\ToonSoldiers_demo.txt" />

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    
+
     [SerializeField]
     private float sensivity = 0.5f;
 
     private CinemachineComposer composer;
-    
+
 
     // Start is called before the first frame update
     void Start()
